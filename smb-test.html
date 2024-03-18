@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display URL Parameter</title>
+</head>
+<body>
+    <div id="messageDisplay">Loading...</div>
+
+    <script>
+        // Function to get URL parameters
+        function getURLParameter(name) {
+            return new URLSearchParams(window.location.search).get(name);
+        }
+
+        // Get the 'message' parameter from the URL
+        var message = getURLParameter('message');
+
+        // Display the message in the div
+        if(message) {
+            document.getElementById('messageDisplay').textContent = message;
+        } else {
+            document.getElementById('messageDisplay').textContent = 'No message provided!';
+        }
+    </script>
+</body>
+</html>
