@@ -2,21 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Display URL Parameter</title>
+    <title>SMB Test</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #introMessage {
+            font-size: 14px; /* Smaller font size for the intro message */
+            text-align: center;
+            margin-bottom: 20px; /* Space between the intro message and the main message */
+        }
+
+        #messageDisplay {
+            font-size: 24px; /* Larger font size for the main message */
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div id="introMessage">Demo of how we could pre-populate the AI Trip Planner from Meta channels, such as Facebook, Instagram, and WhatsApp</div>
     <div id="messageDisplay">Loading...</div>
 
     <script>
-        // Function to get URL parameters
         function getURLParameter(name) {
             return new URLSearchParams(window.location.search).get(name);
         }
 
-        // Get the 'message' parameter from the URL
         var message = getURLParameter('message');
 
-        // Display the message in the div
         if(message) {
             document.getElementById('messageDisplay').textContent = message;
         } else {
